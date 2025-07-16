@@ -1,0 +1,716 @@
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каразінська школа бізнесу</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #dbeafe;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: white;
+            color: #1e3a8a;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #f8fafc;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Hero image */
+        .hero-image {
+            margin-top: 3rem;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Placeholder for missing images */
+        .image-placeholder {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            border: 2px dashed rgba(255,255,255,0.3);
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e3a8a;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        .feature p {
+            color: #666;
+        }
+
+        /* Programs Section */
+        .programs {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .program-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(30,58,138,0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(30,58,138,0.15);
+        }
+
+        .program-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .program-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .program-link {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .program-link:hover {
+            color: #1e3a8a;
+        }
+
+        .program-category {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .program-category h3 {
+            color: #1e3a8a;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .bachelor-image {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .bachelor-image img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(30,58,138,0.2);
+        }
+
+        .bachelor-image-placeholder {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(30,58,138,0.2);
+        }
+
+        /* Study Formats */
+        .study-formats {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+        }
+
+        .study-formats .section-title {
+            color: white;
+        }
+
+        .formats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .format-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+
+        .format-card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+
+        .format-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Images Section */
+        .images-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .image-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(30,58,138,0.1);
+            transition: transform 0.3s;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-card-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .image-card-content {
+            padding: 1.5rem;
+        }
+
+        .image-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .image-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(30,58,138,0.1);
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item a {
+            color: #3b82f6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #1e3a8a;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-image img, .image-placeholder {
+                max-width: 100%;
+            }
+
+            .images-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bachelor-image img, .bachelor-image-placeholder {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Каразінська школа бізнесу</div>
+            <ul class="nav-links">
+                <li><a href="#home">Головна</a></li>
+                <li><a href="#programs">Програми</a></li>
+                <li><a href="#formats">Форма навчання</a></li>
+                <li><a href="#contact">Контакти</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Побудуй кар'єру, яка надихає! 🚀</h1>
+            <p>Каразінська школа бізнесу – місце, де мрії перетворюються на дії, а ідеї – на бізнес</p>
+            <a href="#programs" class="cta-button">Обрати програму навчання</a>
+            
+            <div class="hero-image">
+                <img src="images/kbs-main-promo.jpg" alt="Мрієш керувати бізнесом? Почни шлях у Karazin Business School" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="image-placeholder" style="display: none;">
+                    Мрієш керувати бізнесом?<br>
+                    Почни шлях у Karazin Business School
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Чому обирають нас?</h2>
+            <div class="hero-image">
+                <img src="images/kbs-promo-leaders.jpg" alt="Каразінська школа бізнесу - освіта для лідерів" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="image-placeholder" style="display: none;">
+                    Каразінська школа бізнесу - освіта для лідерів
+                </div>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Реальні бізнес-кейси</h3>
+                    <p>Працюй з актуальними завданнями під менторством викладачів-практиків</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Сучасні методики</h3>
+                    <p>Навчання за найновішими підходами – від онлайн до бізнес-інкубації</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌏</div>
+                    <h3>Міжнародні можливості</h3>
+                    <p>Програми академічної мобільності, подвійні дипломи в університетах ЄС, США, Китаю</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📣</div>
+                    <h3>Світові челенджі</h3>
+                    <p>Участь у лекціях та воркшопах від українських та іноземних підприємців</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💼</div>
+                    <h3>Кар'єрні можливості</h3>
+                    <p>Доступ до вакансій в топових українських і міжнародних компаніях</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💬</div>
+                    <h3>Амбітна спільнота</h3>
+                    <p>Навчайся поруч зі сміливими та амбітними людьми</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs" class="programs">
+        <div class="container">
+            <h2 class="section-title">Програми навчання</h2>
+            
+            <div class="program-category">
+                <h3>🎓 Бакалавр</h3>
+                <div class="bachelor-image">
+                    <img src="images/kbs-bachelor-students.jpg" alt="Студенти бакалавру КБШ" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="bachelor-image-placeholder" style="display: none;">
+                        Студенти бакалавру КБШ
+                    </div>
+                </div>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <h3>📘 Бізнес-адміністрування</h3>
+                        <p>Комплексна програма для майбутніх лідерів бізнесу. Вивчай основи управління, фінанси, маркетинг та стратегічне планування.</p>
+                        <a href="https://drive.google.com/file/d/1yqy3pMSl62E-1wF0pMaUkYzFjThqpy0E/view?usp=sharing" class="program-link" target="_blank">Детальніше →</a>
+                    </div>
+                    <div class="program-card">
+                        <h3>📈 Менеджмент</h3>
+                        <p>Освоюй мистецтво управління людьми та процесами. Стань ефективним керівником міжнародного рівня.</p>
+                        <a href="https://drive.google.com/file/d/1HiEKxw6ivGJyxcsoSVXRldlzeFFnsYis/view?usp=sharing" class="program-link" target="_blank">Детальніше →</a>
+                    </div>
+                    <div class="program-card">
+                        <h3>💡 Підприємництво</h3>
+                        <p>Створюй власний бізнес з нуля. Розвивай підприємницьке мислення та навички інновацій.</p>
+                        <a href="https://drive.google.com/file/d/144e8myGbuSJLTcW44rjuaFMsSJJS4vUv/view?usp=sharing" class="program-link" target="_blank">Детальніше →</a>
+                    </div>
+                    <div class="program-card">
+                        <h3>🌐 Міжнародна логістика</h3>
+                        <p>Управляй глобальними ланцюгами поставок. Вивчай сучасні технології та методи оптимізації логістичних процесів.</p>
+                        <a href="https://drive.google.com/file/d/1y7IOkewrORNnRA7O_ENekmLrdG4MyNNg/view?usp=sharing" class="program-link" target="_blank">Детальніше →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="program-category">
+                <h3>🎓 Магістр</h3>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <h3>📘 Бізнес-адміністрування</h3>
+                        <p>Поглиблене вивчення стратегічного управління, корпоративних фінансів та лідерства для досвідчених професіоналів.</p>
+                        <a href="https://drive.google.com/file/d/15rjZ2Ou7ANO71NQX6xEUOflomBuVTtA5/view?usp=sharing" class="program-link" target="_blank">Детальніше →</a>
+                    </div>
+                    <div class="program-card">
+                        <h3>📈 Менеджмент</h3>
+                        <p>Розвивай навички управління великими організаціями, вивчай сучасні методики та інструменти менеджменту.</p>
+                        <a href="https://drive.google.com/file/d/1txNeuqrOpWxOFeKlClk3J8Cgt7Gw2XRv/view?usp=sharing" class="program-link" target="_blank">Детальніше →</a>
+                    </div>
+                    <div class="program-card">
+                        <h3>💡 Підприємництво</h3>
+                        <p>Створюй та масштабуй інноваційні бізнес-проекти, вивчай венчурне фінансування та стартап-екосистему.</p>
+                        <a href="https://drive.google.com/file/d/1lvRWG7yigVIDx_GwAnw7I0RT0L-N1UkZ/view?usp=sharing" class="program-link" target="_blank">Детальніше →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="formats" class="study-formats">
+        <div class="container">
+            <h2 class="section-title">Форма навчання</h2>
+            <div class="formats-grid">
+                <div class="format-card">
+                    <div class="format-icon">💻</div>
+                    <h3>Онлайн</h3>
+                    <p>Навчайся з будь-якої точки світу в зручний для тебе час</p>
+                </div>
+                <div class="format-card">
+                    <div class="format-icon">🔄</div>
+                    <h3>Змішана форма </h3>
+                    <p>Онлайн + офлайн на базі Kulturzentrum GOROD, Мюнхен 🇩🇪</p>
+                </div>
+                <div class="format-card">
+                    <div class="format-icon">🏫</div>
+                    <h3>Офлайн</h3>
+                    <p>Повноцінне очне навчання в Kulturzentrum GOROD, Мюнхен 🇩🇪</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Контакти </h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3>Телефон / Telegram</h3>
+                    <a href="tel:+380974145513">+38 097 414 5513</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:vstup.kbs@karazin.ua">vstup.kbs@karazin.ua</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📲</div>
+                    <h3>Telegram-канал</h3>
+                    <a href="https://t.me/kbs_vstup" target="_blank">t.me/kbs_vstup</a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <h3 style="color: #1e3a8a;">💥 Успішне майбутнє не чекають — його будують!</h3>
+                <p style="margin-top: 1rem; font-size: 1.1rem;">
+                    Якщо ти мрієш не боятися, а діяти, створювати, керувати, масштабувати — почни свій професійний шлях з Каразінською школою бізнесу!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="images-section">
+        <div class="container">
+            <h2 class="section-title">Галерея</h2>
+            <div class="images-grid">
+                <div class="image-card">
+                    <img src="images/kbs-logo-notebook.jpg" alt="Каразінська школа бізнесу - логотип" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-card-placeholder" style="display: none;">
+                        KBS Логотип
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="images/kbs-students-forbes.jpg" alt="Студенти KBS у списку Forbes" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-card-placeholder" style="display: none;">
+                        Студенти у Forbes
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="images/kbs-student-happy.jpg" alt="Щаслива студентка KBS" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-card-placeholder" style="display: none;">
+                        Студентське життя
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="images/kbs-students-group.jpg" alt="Група студентів KBS" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-card-placeholder" style="display: none;">
+                        Команда студентів
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="images/kbs-students-fountain.jpg" alt="Студенти KBS біля фонтану" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-card-placeholder" style="display: none;">
+                        Студенти біля фонтану
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="images/kbs-students-fun.jpg" alt="Веселі студенти KBS" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-card-placeholder" style="display: none;">
+                        Веселі студенти
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Каразінська школа бізнесу. Харківський національний університет імені В. Н. Каразіна</p>
+            <p>#вступ2025 #vstup2025 #karazinbs #one_step_ahead</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>         
